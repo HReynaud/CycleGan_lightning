@@ -87,11 +87,11 @@ def get_mosaic(real_batch, fake_batch, rec_batch):
 
 def init_weights(m):
     if isinstance(m, nn.Linear):
-        nn.init.xavier_uniform(m.weight)
+        nn.init.xavier_uniform_(m.weight)
         if m.bias is not None:
             m.bias.data.fill_(0.01)
     elif isinstance(m, nn.Conv2d):
-        nn.init.xavier_uniform(m.weight)
+        nn.init.xavier_uniform_(m.weight)
         if m.bias is not None:
             m.bias.data.fill_(0.01)
     elif isinstance(m, nn.BatchNorm2d):
@@ -99,6 +99,6 @@ def init_weights(m):
         if m.bias is not None:
             m.bias.data.zero_()
     elif isinstance(m, nn.ConvTranspose2d):
-        nn.init.xavier_uniform(m.weight)
+        nn.init.xavier_uniform_(m.weight)
         if m.bias is not None:
             m.bias.data.fill_(0.01)

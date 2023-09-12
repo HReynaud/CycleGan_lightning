@@ -5,6 +5,7 @@ import functools
 
 from torchsummary import summary
 
+# NOT USED
 
 class DoubleConv(nn.Module):
     def __init__(self, in_channels, out_channels, act_func=nn.ReLU):
